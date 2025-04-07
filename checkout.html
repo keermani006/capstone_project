@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <title>Pathway | Checkout</title>
+</head>
+<body class="page-transition">
+  <nav>
+    <div class="nav__logo">Pathway<span>.</span></div>
+    <ul class="nav__links">
+      <li class="link"><a href="index.html">Home</a></li>
+      <li class="link"><a href="destinations.html">Destinations</a></li>
+      <li class="link"><a href="tours.html">Tours</a></li>
+      <li class="link"><a href="services.html">Services</a></li>
+      
+    </ul>
+    <div class="nav__buttons">
+      <div class="cart-icon">
+        <i class="ri-shopping-cart-line"></i>
+        <span class="cart-count">0</span>
+        <div class="cart-dropdown">
+          <div class="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+            
+          <div class="cart-total">
+            <p>Total: <span>$0</span></p>
+            <button class="btn checkout-btn">Proceed to Checkout</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </nav>
+
+  <div class="checkout-container">
+    <h1 class="checkout-title">Checkout</h1>
+    
+    <div class="checkout-grid">
+      <div class="checkout-items">
+        <h2 class="summary-title">Your Items</h2>
+        <div id="checkout-items-container">
+        </div>
+      </div>
+      
+      <div class="checkout-summary">
+        <h2 class="summary-title">Order Summary</h2>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Taxes</span>
+          <span id="taxes">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span id="shipping">$0.00</span>
+        </div>
+        <div class="summary-total">
+          <span>Total</span>
+          <span id="total">$0.00</span>
+        </div>
+        
+        <button class="btn checkout-btn" id="place-order-btn">Place Order</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col animate-on-scroll">
+        <h3>Pathway<span>.</span></h3>
+        <p>
+          Explore your suitable and dream places around the world. Here you
+          can find your right destination.
+        </p>
+      </div>
+      <div class="footer__col animate-on-scroll animate-delay-1">
+        <h4>Support</h4>
+        <p>FAQs</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+        <p>Contact Us</p>
+      </div>
+      <div class="footer__col animate-on-scroll animate-delay-2">
+        <h4>Address</h4>
+        <p>
+          <span>Address:</span> Ayyappa Society, Madhapur, Telangana, 500018,
+          India
+        </p>
+        <p><span>Email:</span> info@pathway.com</p>
+        <p><span>Phone:</span> +91 9876543210</p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 Keermani. All rights reserved.
+    </div>
+  </footer>
+
+
+  <script src="cart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      
+      const checkoutItemsContainer = document.getElementById('checkout-items-container');
+      
+      if (cart.length === 0) {
+        checkoutItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+        return;
+      }
+      
+      
+      let subtotal = 0;
+      
+      
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        
+        const checkoutItemHTML = `
+          <div class="checkout-item" data-id="${item.id}">
+            
+            <div class="checkout-item-details">
+              <p class="checkout-item-name">${item.name}</p>
+              <p class="checkout-item-price">$${item.price.toFixed(2)}</p>
+              <div class="checkout-item-quantity">
+                <button class="quantity-btn decrease">-</button>
+                <span>${item.quantity}</span>
+                <button class="quantity-btn increase">+</button>
+              </div>
+            </div>
+            <div class="checkout-item-total">
+              $${itemTotal.toFixed(2)}
+            </div>
+            <i class="ri-delete-bin-line checkout-item-remove"></i>
+          </div>
+        `;
+        
+        checkoutItemsContainer.innerHTML += checkoutItemHTML;
+      });
+      
+      
+      const taxes = subtotal * 0.1; 
+      const shipping = subtotal > 0 ? 15 : 0; 
+      const total = subtotal + taxes + shipping;
+      
+      
+      document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('taxes').textContent = `$${taxes.toFixed(2)}`;
+      document.getElementById('shipping').textContent = `$${shipping.toFixed(2)}`;
+      document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+      
+      
+      const decreaseButtons = document.querySelectorAll('.quantity-btn.decrease');
+      const increaseButtons = document.querySelectorAll('.quantity-btn.increase');
+      const removeButtons = document.querySelectorAll('.checkout-item-remove');
+      
+      decreaseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const checkoutItem = this.closest('.checkout-item');
+          const itemId = checkoutItem.getAttribute('data-id');
+          const itemIndex = cart.findIndex(item => item.id === itemId);
+          
+          if (itemIndex > -1) {
+            if (cart[itemIndex].quantity > 1) {
+              cart[itemIndex].quantity -= 1;
+              localStorage.setItem('cart', JSON.stringify(cart));
+              location.reload(); 
+            }
+          }
+        });
+      });
+      
+      increaseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const checkoutItem = this.closest('.checkout-item');
+          const itemId = checkoutItem.getAttribute('data-id');
+          const itemIndex = cart.findIndex(item => item.id === itemId);
+          
+          if (itemIndex > -1) {
+            cart[itemIndex].quantity += 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+          }
+        });
+      });
+      
+      removeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const checkoutItem = this.closest('.checkout-item');
+          const itemId = checkoutItem.getAttribute('data-id');
+          
+          
+          const updatedCart = cart.filter(item => item.id !== itemId);
+          localStorage.setItem('cart', JSON.stringify(updatedCart));
+          location.reload(); 
+        });
+      });
+      
+     
+      const placeOrderBtn = document.getElementById('place-order-btn');
+      placeOrderBtn.addEventListener('click', function() {
+        
+        alert('Thank you for your order! Your booking has been confirmed.');
+        localStorage.removeItem('cart');
+        window.location.href = 'index.html';
+      });
+    });
+  </script>
+</body>
+</html>
+

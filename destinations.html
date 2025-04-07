@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Pathway | Destinations</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">Pathway<span>.</span></div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="link"><a href="destinations.html" class="active">Destinations</a></li>
+        <li class="link"><a href="tours.html">Tours</a></li>
+        <li class="link"><a href="services.html">Services</a></li>
+        
+      </ul>
+      <div class="nav__buttons">
+        <div class="cart-icon">
+          <i class="ri-shopping-cart-line"></i>
+          <span class="cart-count">0</span>
+          <div class="cart-dropdown">
+            <div class="cart-items">
+              <p class="empty-cart">Your cart is empty</p>
+              
+            </div>
+            <div class="cart-total">
+              <p>Total: <span>$0</span></p>
+              <button class="btn checkout-btn">Proceed to Checkout</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <div class="section__container">
+        <h1>Explore Our Destinations</h1>
+        <p>Discover the most beautiful places around the world</p>
+      </div>
+    </header>
+
+    <section class="section__container destination__container">
+      <div class="section__header">
+        <div>
+          <h2 class="section__title">Popular Destinations</h2>
+          <p class="section__subtitle">
+            Explore these amazing destinations that our travelers love the most.
+          </p>
+        </div>
+      </div>
+      
+      <div class="destination__grid">
+        <div class="destination__card">
+          <img src="Goa.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Goa</p>
+            <p class="destination__subtitle">India</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.8</div>
+              <div class="price">From $899</div>
+            </div>
+            <button class="book__now" data-name="Goa, India" data-price="899">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="London.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">London</p>
+            <p class="destination__subtitle">United Kingdom</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.9</div>
+              <div class="price">From $1,299</div>
+            </div>
+            <button class="book__now" data-name="London, United Kingdom" data-price="1299">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="Bali.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Bali</p>
+            <p class="destination__subtitle">Indonesia</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.7</div>
+              <div class="price">From $1,099</div>
+            </div>
+            <button class="book__now" data-name="Bali, Indonesia" data-price="1099">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="Rome.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Rome</p>
+            <p class="destination__subtitle">Italy</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.6</div>
+              <div class="price">From $999</div>
+            </div>
+            <button class="book__now" data-name="Rome, Italy" data-price="999">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container destination__container">
+      <div class="section__header">
+        <div>
+          <h2 class="section__title">Beach Destinations</h2>
+          <p class="section__subtitle">
+            Relax and unwind at these beautiful beach destinations.
+          </p>
+        </div>
+      </div>
+      
+      <div class="destination__grid">
+        <div class="destination__card">
+          <img src="Bali.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Bali</p>
+            <p class="destination__subtitle">Indonesia</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.7</div>
+              <div class="price">From $799</div>
+            </div>
+            <button class="book__now" data-name="Bali, Indonesia" data-price="799">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="maldives.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Maldives</p>
+            <p class="destination__subtitle">Maldives</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.9</div>
+              <div class="price">From $1,499</div>
+            </div>
+            <button class="book__now" data-name="Maldives, Maldives" data-price="1499">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="sanitori.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Santorini</p>
+            <p class="destination__subtitle">Greece</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.8</div>
+              <div class="price">From $1,199</div>
+            </div>
+            <button class="book__now" data-name="Santorini, Greece" data-price="1199">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="cancun.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Cancun</p>
+            <p class="destination__subtitle">Mexico</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.5</div>
+              <div class="price">From $699</div>
+            </div>
+            <button class="book__now" data-name="Cancun, Mexico" data-price="699">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container destination__container">
+      <div class="section__header">
+        <div>
+          <h2 class="section__title">Adventure Destinations</h2>
+          <p class="section__subtitle">
+            Experience the thrill of these breathtaking adventure destinations.
+          </p>
+        </div>
+      </div>
+      
+      <div class="destination__grid">
+        <div class="destination__card">
+          <img src="queenstown.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Queenstown</p>
+            <p class="destination__subtitle">New Zealand</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.8</div>
+              <div class="price">From $1,299</div>
+            </div>
+            <button class="book__now" data-name="Queenstown, New Zealand" data-price="1299">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="patagonia.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Patagonia</p>
+            <p class="destination__subtitle">Argentina/Chile</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.7</div>
+              <div class="price">From $1,599</div>
+            </div>
+            <button class="book__now" data-name="Patagonia, Argentina/Chile" data-price="1599">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="costarica.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Costa Rica</p>
+            <p class="destination__subtitle">Costa Rica</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.6</div>
+              <div class="price">From $899</div>
+            </div>
+            <button class="book__now" data-name="Costa Rica, Costa Rica" data-price="899">Book Now</button>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="moab.jpg" alt="destination" />
+          <div class="destination__details destination__details--visible">
+            <p class="destination__title">Moab</p>
+            <p class="destination__subtitle">USA</p>
+            <div class="destination__info">
+              <div class="rating"><i class="ri-star-fill"></i> 4.5</div>
+              <div class="price">From $799</div>
+            </div>
+            <button class="book__now" data-name="Moab, USA" data-price="799">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col animate-on-scroll">
+          <h3>Pathway<span>.</span></h3>
+          <p>
+            Explore your suitable and dream places around the world. Here you
+            can find your right destination.
+          </p>
+        </div>
+        <div class="footer__col animate-on-scroll animate-delay-1">
+          <h4>Support</h4>
+          <p>FAQs</p>
+          <p>Terms & Conditions</p>
+          <p>Privacy Policy</p>
+          <p>Contact Us</p>
+        </div>
+        <div class="footer__col animate-on-scroll animate-delay-2">
+          <h4>Address</h4>
+          <p>
+            <span>Address:</span> Ayyappa Society, Madhapur, Telangana, 500018,
+            India
+          </p>
+          <p><span>Email:</span> info@pathway.com</p>
+          <p><span>Phone:</span> +91 9876543210</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Keermani. All rights reserved.
+      </div>
+    </footer>
+  
+    <script src="cart.js"></script>
+  </body>
+</html>
+

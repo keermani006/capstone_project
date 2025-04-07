@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <title>Pathway | Login</title>
+</head>
+<body class="page-transition">
+  <nav>
+    <div class="nav__logo">Pathway<span>.</span></div>
+    <ul class="nav__links">
+      <li class="link"><a href="index.html">Home</a></li>
+      <li class="link"><a href="destinations.html">Destinations</a></li>
+      <li class="link"><a href="tours.html">Tours</a></li>
+      <li class="link"><a href="services.html">Services</a></li>
+      
+    </ul>
+    <div class="nav__buttons">
+      <a href="login.html" class="log active">Login</a>
+      <a href="register.html" class="log">Register</a>
+    </div>
+  </nav>
+
+  <section class="auth__container">
+    <div class="auth__card">
+      <div class="auth__header">
+        <h2>Welcome Back</h2>
+        <p>Login to access your account</p>
+      </div>
+      
+      <form class="auth__form" id="loginForm" novalidate>
+        <div class="form__group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+          <div class="error-message" id="emailError"></div>
+        </div>
+        
+        <div class="form__group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <div class="error-message" id="passwordError"></div>
+        </div>
+        
+        <div class="form__options">
+          <div class="remember-me">
+            <input type="checkbox" id="remember" />
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        
+        <button type="submit" class="btn auth-btn">Login</button>
+        
+        <div class="auth__divider">
+          <span>or</span>
+        </div>
+        
+        <div class="social__login">
+          <button type="button" class="social-btn google"  onclick="window.location.href='https://myaccount.google.com/';">
+            <i class="ri-google-fill"></i> Continue with Google
+          </button>
+          <button type="button" class="social-btn facebook" onclick="window.location.href='https://www.facebook.com/';">
+            <i class="ri-facebook-fill"></i> Continue with Facebook
+          </button>
+        </div>
+        
+        <p class="auth__redirect">
+          Don't have an account? <a href="register.html">Register</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col animate-on-scroll">
+        <h3>Pathway<span>.</span></h3>
+        <p>
+          Explore your suitable and dream places around the world. Here you
+          can find your right destination.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <p>FAQs</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+        <p>Contact Us</p>
+      </div>
+      <div class="footer__col">
+        <h4>Address</h4>
+        <p>
+          <span>Address:</span> Ayyappa Society, Madhapur, Telangana, 500018,
+          India
+        </p>
+        <p><span>Email:</span> info@pathway.com</p>
+        <p><span>Phone:</span> +91 9876543210</p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 Keermani. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Scroll animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      function checkScroll() {
+        animateElements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+          
+          if (elementPosition < screenPosition) {
+            element.classList.add('animate');
+          }
+        });
+      }
+      
+     
+      checkScroll();
+      
+      
+      window.addEventListener('scroll', checkScroll);
+
+      
+      const loginForm = document.getElementById('loginForm');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+
+      
+      function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      
+      emailInput.addEventListener('input', function() {
+        if (emailInput.value.trim() === '') {
+          emailError.textContent = 'Email is required';
+          emailInput.classList.add('input-error');
+        } else if (!validateEmail(emailInput.value)) {
+          emailError.textContent = 'Please enter a valid email address';
+          emailInput.classList.add('input-error');
+        } else {
+          emailError.textContent = '';
+          emailInput.classList.remove('input-error');
+        }
+      });
+
+      passwordInput.addEventListener('input', function() {
+        if (passwordInput.value.trim() === '') {
+          passwordError.textContent = 'Password is required';
+          passwordInput.classList.add('input-error');
+        } else if (passwordInput.value.length < 6) {
+          passwordError.textContent = 'Password must be at least 6 characters';
+          passwordInput.classList.add('input-error');
+        } else {
+          passwordError.textContent = '';
+          passwordInput.classList.remove('input-error');
+        }
+      });
+
+      
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        
+        if (emailInput.value.trim() === '') {
+          emailError.textContent = 'Email is required';
+          emailInput.classList.add('input-error');
+          isValid = false;
+        } else if (!validateEmail(emailInput.value)) {
+          emailError.textContent = 'Please enter a valid email address';
+          emailInput.classList.add('input-error');
+          isValid = false;
+        } else {
+          emailError.textContent = '';
+          emailInput.classList.remove('input-error');
+        }
+
+       
+        if (passwordInput.value.trim() === '') {
+          passwordError.textContent = 'Password is required';
+          passwordInput.classList.add('input-error');
+          isValid = false;
+        } else if (passwordInput.value.length < 6) {
+          passwordError.textContent = 'Password must be at least 6 characters';
+          passwordInput.classList.add('input-error');
+          isValid = false;
+        } else {
+          passwordError.textContent = '';
+          passwordInput.classList.remove('input-error');
+        }
+
+        
+        if (isValid) {
+          
+          const submitBtn = document.querySelector('.auth-btn');
+          const originalText = submitBtn.textContent;
+          submitBtn.innerHTML = '<div class="spinner"></div>';
+          submitBtn.disabled = true;
+
+          
+          setTimeout(() => {
+            
+            window.location.href = 'index.html';
+          }, 2000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

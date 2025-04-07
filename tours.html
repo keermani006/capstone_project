@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+            rel="stylesheet"
+          />
+          <link rel="stylesheet" href="styles.css" />
+          <title>Pathway | Tours</title>
+        </head>
+        <body>
+          <nav>
+            <div class="nav__logo">Pathway<span>.</span></div>
+            <ul class="nav__links">
+              <li class="link"><a href="index.html">Home</a></li>
+              <li class="link"><a href="destinations.html">Destinations</a></li>
+              <li class="link"><a href="tours.html" class="active">Tours</a></li>
+              <li class="link"><a href="services.html">Services</a></li>
+              
+            </ul>
+            <div class="nav__buttons">
+              <div class="cart-icon">
+                <i class="ri-shopping-cart-line"></i>
+                <span class="cart-count">0</span>
+                <div class="cart-dropdown">
+                  <div class="cart-items">
+                    <p class="empty-cart">Your cart is empty</p>
+                    
+                  </div>
+                  <div class="cart-total">
+                    <p>Total: <span>$0</span></p>
+                    <button class="btn checkout-btn">Proceed to Checkout</button>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </nav>
+      
+          <header class="page-header">
+            <div class="section__container">
+              <h1>Our Guided Tours</h1>
+              <p>Explore the world with our expert guides and curated experiences</p>
+            </div>
+          </header>
+      
+          <section class="section__container">
+            <div class="section__header">
+              <h2 class="section__title">Featured Tours</h2>
+              <p class="section__subtitle">
+                Our most popular guided tours with expert local guides and unforgettable experiences.
+              </p>
+            </div>
+            
+            <div class="tour__filters">
+              <button class="filter-btn active" data-filter="all">All Tours</button>
+              <button class="filter-btn" data-filter="adventure">Adventure</button>
+              <button class="filter-btn" data-filter="cultural">Cultural</button>
+              <button class="filter-btn" data-filter="relaxation">Relaxation</button>
+              <button class="filter-btn" data-filter="family">Family</button>
+            </div>
+            
+            <div class="tour__grid">
+              <div class="tour__box">
+                <div class="tour__image">
+                  <img src="himalayas.jpg" alt="tour" />
+                  <div class="tour__tag">Adventure</div>
+                </div>
+                <div class="tour__content">
+                  <h3>Himalayan Trek & Cultural Immersion</h3>
+                  <div class="tour__info">
+                    <p><i class="ri-time-line"></i> 12 Days</p>
+                    <p><i class="ri-group-line"></i> Max 12 People</p>
+                    <p><i class="ri-map-pin-line"></i> Nepal</p>
+                  </div>
+                  <p class="tour__description">
+                    Experience the majesty of the Himalayas with our expert guides. Trek through stunning mountain landscapes and immerse yourself in local Nepalese culture.
+                  </p>
+                  <div class="tour__footer">
+                    <div class="tour__rating">
+                      <i class="ri-star-fill"></i>
+                      <span>4.8 (124 reviews)</span>
+                    </div>
+                    <div class="tour__price">
+                      <p>From <span>$1,899</span></p>
+                    </div>
+                  </div>
+                  <button class="book__now" data-name="Himalayan Trek & Cultural Immersion" data-price="1899">Book Now</button>
+                </div>
+              </div>
+              
+              <div class="tour__box">
+                <div class="tour__image">
+                  <img src="japanese.jpg" alt="tour" />
+                  <div class="tour__tag">Cultural</div>
+                </div>
+                <div class="tour__content">
+                  <h3>Japanese Cultural Heritage Tour</h3>
+                  <div class="tour__info">
+                    <p><i class="ri-time-line"></i> 10 Days</p>
+                    <p><i class="ri-group-line"></i> Max 10 People</p>
+                    <p><i class="ri-map-pin-line"></i> Japan</p>
+                  </div>
+                  <p class="tour__description">
+                    Discover the rich cultural heritage of Japan. Visit ancient temples, participate in traditional tea ceremonies, and explore vibrant Tokyo and historic Kyoto.
+                  </p>
+                  <div class="tour__footer">
+                    <div class="tour__rating">
+                      <i class="ri-star-fill"></i>
+                      <span>4.9 (98 reviews)</span>
+                    </div>
+                    <div class="tour__price">
+                      <p>From <span>$2,499</span></p>
+                    </div>
+                  </div>
+                  <button class="book__now" data-name="Japanese Cultural Heritage Tour" data-price="2499">Book Now</button>
+                </div>
+              </div>
+              
+              <div class="tour__box">
+                <div class="tour__image">
+                  <img src="balitour.jpg" alt="tour" />
+                  <div class="tour__tag">Relaxation</div>
+                </div>
+                <div class="tour__content">
+                  <h3>Bali Wellness Retreat</h3>
+                  <div class="tour__info">
+                    <p><i class="ri-time-line"></i> 7 Days</p>
+                    <p><i class="ri-group-line"></i> Max 8 People</p>
+                    <p><i class="ri-map-pin-line"></i> Indonesia</p>
+                  </div>
+                  <p class="tour__description">
+                    Rejuvenate your mind, body, and soul in beautiful Bali. Enjoy yoga sessions, spa treatments, healthy cuisine, and explore the island's natural beauty.
+                  </p>
+                  <div class="tour__footer">
+                    <div class="tour__rating">
+                      <i class="ri-star-fill"></i>
+                      <span>4.7 (86 reviews)</span>
+                    </div>
+                    <div class="tour__price">
+                      <p>From <span>$1,299</span></p>
+                    </div>
+                  </div>
+                  <button class="book__now" data-name="Bali Wellness Retreat" data-price="1299">Book Now</button>
+                </div>
+              </div>
+              
+              <div class="tour__box">
+                <div class="tour__image">
+                  <img src="wildlife.jpg" alt="tour" />
+                  <div class="tour__tag">Family</div>
+                </div>
+                <div class="tour__content">
+                  <h3>Costa Rican Wildlife Adventure</h3>
+                  <div class="tour__info">
+                    <p><i class="ri-time-line"></i> 8 Days</p>
+                    <p><i class="ri-group-line"></i> Max 15 People</p>
+                    <p><i class="ri-map-pin-line"></i> Costa Rica</p>
+                  </div>
+                  <p class="tour__description">
+                    Perfect for families! Explore Costa Rica's incredible biodiversity. Spot sloths and monkeys, zip-line through rainforests, and relax on beautiful beaches.
+                  </p>
+                  <div class="tour__footer">
+                    <div class="tour__rating">
+                      <i class="ri-star-fill"></i>
+                      <span>4.8 (112 reviews)</span>
+                    </div>
+                    <div class="tour__price">
+                      <p>From <span>$1,599</span></p>
+                    </div>
+                  </div>
+                  <button class="book__now" data-name="Costa Rican Wildlife Adventure" data-price="1599">Book Now</button>
+                </div>
+              </div>
+              
+              <div class="tour__box">
+                <div class="tour__image">
+                  <img src="africansafari.jpg" alt="tour" />
+                  <div class="tour__tag">Adventure</div>
+                </div>
+                <div class="tour__content">
+                  <h3>African Safari Experience</h3>
+                  <div class="tour__info">
+                    <p><i class="ri-time-line"></i> 9 Days</p>
+                    <p><i class="ri-group-line"></i> Max 8 People</p>
+                    <p><i class="ri-map-pin-line"></i> Tanzania</p>
+                  </div>
+                  <p class="tour__description">
+                    Witness the incredible wildlife of Tanzania on this unforgettable safari. See the Big Five in their natural habitat and experience the Great Migration.
+                  </p>
+                  <div class="tour__footer">
+                    <div class="tour__rating">
+                      <i class="ri-star-fill"></i>
+                      <span>4.9 (145 reviews)</span>
+                    </div>
+                    <div class="tour__price">
+                      <p>From <span>$3,299</span></p>
+                    </div>
+                  </div>
+                  <button class="book__now" data-name="African Safari Experience" data-price="3299">Book Now</button>
+                </div>
+              </div>
+              
+              <div class="tour__box">
+                <div class="tour__image">
+                  <img src="incatrail.jpg" alt="tour" />
+                  <div class="tour__tag">Cultural</div>
+                </div>
+                <div class="tour__content">
+                  <h3>Peruvian Highlights Tour</h3>
+                  <div class="tour__info">
+                    <p><i class="ri-time-line"></i> 11 Days</p>
+                    <p><i class="ri-group-line"></i> Max 12 People</p>
+                    <p><i class="ri-map-pin-line"></i> Peru</p>
+                  </div>
+                  <p class="tour__description">
+                    Discover the wonders of Peru, from the ancient ruins of Machu Picchu to the vibrant culture of Cusco and the natural beauty of the Sacred Valley.
+                  </p>
+                  <div class="tour__footer">
+                    <div class="tour__rating">
+                      <i class="ri-star-fill"></i>
+                      <span>4.8 (132 reviews)</span>
+                    </div>
+                    <div class="tour__price">
+                      <p>From <span>$1,999</span></p>
+                    </div>
+                  </div>
+                  <button class="book__now" data-name="Peruvian Highlights Tour" data-price="1999">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </section>
+      
+          
+      
+          <footer class="footer">
+            <div class="section__container footer__container">
+              <div class="footer__col animate-on-scroll">
+                <h3>Pathway<span>.</span></h3>
+                <p>
+                  Explore your suitable and dream places around the world. Here you
+                  can find your right destination.
+                </p>
+              </div>
+              <div class="footer__col animate-on-scroll animate-delay-1">
+                <h4>Support</h4>
+                <p>FAQs</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+                <p>Contact Us</p>
+              </div>
+              <div class="footer__col animate-on-scroll animate-delay-2">
+                <h4>Address</h4>
+                <p>
+                  <span>Address:</span> Ayyappa Society, Madhapur, Telangana, 500018,
+                  India
+                </p>
+                <p><span>Email:</span> info@pathway.com</p>
+                <p><span>Phone:</span> +91 9876543210</p>
+              </div>
+            </div>
+            <div class="footer__bar">
+              Copyright © 2025 Keermani. All rights reserved.
+            </div>
+          </footer>
+        
+           
+      
+          <script>
+            
+            document.querySelectorAll('.filter-btn').forEach(button => {
+              button.addEventListener('click', () => {
+                
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                  btn.classList.remove('active');
+                });
+                
+                
+                button.classList.add('active');
+                
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                
+                document.querySelectorAll('.tour__box').forEach(card => {
+                  const tag = card.querySelector('.tour__tag').textContent.toLowerCase();
+                  
+                  if (filterValue === 'all' || tag === filterValue.toLowerCase()) {
+                    card.style.display = 'block';
+                  } else {
+                    card.style.display = 'none';
+                  }
+                });
+              });
+            });
+          </script>
+          <script src="cart.js"></script>
+        </body>
+      </html>
+      
+      

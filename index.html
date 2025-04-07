@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <title>Pathway | Home</title>
+</head>
+<body class="page-transition">
+  
+  
+  
+  <nav>
+    <div class="nav__logo">Pathway<span>.</span></div>
+    <ul class="nav__links">
+      <li class="link"><a href="index.html" class="active">Home</a></li>
+      <li class="link"><a href="destinations.html">Destinations</a></li>
+      <li class="link"><a href="tours.html">Tours</a></li>
+      <li class="link"><a href="services.html">Services</a></li>
+    </ul>
+    <div class="nav__buttons">
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <i class="ri-menu-line"></i>
+      </button>
+      <div class="cart-icon">
+        <!-- ... existing cart code ... -->
+      </div>
+      <a href="login.html" class="log">Login</a>
+      <a href="register.html" class="log">Register</a>
+    </div>
+  </nav>
+  <header>
+    <div class="section__container header__container">
+      <div class="header__image">
+        <img src="Header1.jpg" alt="header" />
+        <img src="Header2.jpg" alt="header" />
+      </div>
+      <div class="header__content">
+        <div>
+          <p class="sub__header">Book Now</p>
+          <h1>The Pathway<br />agent for travel</h1>
+          <p class="section__subtitle">
+            Make your travel more enjoyable with us. We are the best travel
+            agency and we are providing the best travel services for our
+            clients.
+          </p>
+          <div class="action__btns">
+            <button class="btn" onclick="window.open('destinations.html', '_blank')">Plan a Trip</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section__container destination__container">
+    <div class="section__header ">
+      <div>
+        <h2 class="section__title">Explore top destinations</h2>
+        <p class="section__subtitle">
+          Explore your suitable and dream places around the world. Here you
+          can find your right destination.
+        </p>
+      </div>
+      
+    </div>
+    <div class="destination__grid">
+      <div class="destination__card">
+        <img src="Goa.jpg" alt="destination" />
+        <div class="destination__details">
+          <p class="destination__title">Goa</p>
+          <p class="destination__subtitle">India</p>
+          <div class="destination__info">
+            <div class="rating"><i class="ri-star-fill"></i> 4.8</div>
+            <div class="price">From $899</div>
+          </div>
+          <button class="book__now" data-name="Goa, India" data-price="899">Add to Cart</button>
+        </div>
+      </div>
+      <div class="destination__card ">
+        <img src="London.jpg" alt="destination" />
+        <div class="destination__details">
+          <p class="destination__title">London</p>
+          <p class="destination__subtitle">United Kingdom</p>
+          <div class="destination__info">
+            <div class="rating"><i class="ri-star-fill"></i> 4.9</div>
+            <div class="price">From $1,299</div>
+          </div>
+          <button class="book__now" data-name="London, United Kingdom" data-price="1299">Add to Cart</button>
+        </div>
+      </div>
+      <div class="destination__card">
+        <img src="Bali.jpg" alt="destination" />
+        <div class="destination__details">
+          <p class="destination__title">Bali</p>
+          <p class="destination__subtitle">Indonesia</p>
+          <div class="destination__info">
+            <div class="rating"><i class="ri-star-fill"></i> 4.7</div>
+            <div class="price">From $1,099</div>
+          </div>
+          <button class="book__now" data-name="Bali, Indonesia" data-price="1099">Add to Cart</button>
+        </div>
+      </div>
+      <div class="destination__card">
+        <img src="Rome.jpg" alt="destination" />
+        <div class="destination__details">
+          <p class="destination__title">Rome</p>
+          <p class="destination__subtitle">Italy</p>
+          <div class="destination__info">
+            <div class="rating"><i class="ri-star-fill"></i> 4.6</div>
+            <div class="price">From $999</div>
+          </div>
+          <button class="book__now" data-name="Rome, Italy" data-price="999">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trip">
+    <div class="section__container trip__container">
+      <h2 class="section__title">Best trip package</h2>
+      <p class="section__subtitle">
+        Explore your suitable and dream places around the world. Here you can
+        find your right destination.
+      </p>
+      <div class="trip__grid">
+        <div class="trip__card">
+          <img src="Andaman.jpg" alt="trip" />
+          <div class="trip__details">
+            <p>Andaman Retreat in 5 Nights</p>
+            <div class="rating"><i class="ri-star-fill"></i> 4.2</div>
+            <div class="booking__price">
+              <div class="price"><span>From</span> $300</div>
+              <button class="book__now" data-name="Andaman, India" data-price="300">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="trip__card">
+          <img src="Iceland.jpg" alt="trip" />
+          <div class="trip__details">
+            <p>Affordable Iceland tour</p>
+            <div class="rating"><i class="ri-star-fill"></i> 4.5</div>
+            <div class="booking__price">
+              <div class="price"><span>From</span> $450</div>
+              <button class="book__now" data-name="Iceland" data-price="450">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="trip__card">
+          <img src="Armenia.jpg" alt="trip" />
+          <div class="trip__details">
+            <p>Armenia Highlights</p>
+            <div class="rating"><i class="ri-star-fill"></i> 4.7</div>
+            <div class="booking__price">
+              <div class="price"><span>From</span> $400</div>
+              <button class="book__now" data-name="Armenia" data-price="400">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="view__all">
+        <button class="btn" onclick="window.open('tours.html', '_blank')">View All</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallary">
+    <div class="section__container gallary__container">
+      <div class="image__gallary">
+        <div class="gallary__col">
+          <img src="gallery1.jpg" alt="gallary" />
+        </div>
+        <div class="gallary__col">
+          <img src="gallery2.jpg" alt="gallary" />
+          <img src="gallery3.jpg" alt="gallary" />
+        </div>
+      </div>
+      <div class="gallary__content animate-on-scroll">
+        <div>
+          <h2 class="section__title">
+            Our trip gallery that will inspire you
+          </h2>
+          <p class="section__subtitle">
+            Explore your suitable and dream places around the world. Here you
+            can find your right destination.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="subscribe">
+    <div class="section__container subscribe__container onsubmit="validateSubscription(event)"">
+      <div class="subscribe__content">
+        <h2 class="section__title">Subscribe to get special prize</h2>
+        <p class="section__subtitle">
+          Explore your suitable and dream places around the world. Here you
+          can find your right destination.
+        </p>
+      </div>
+      <div class="subscribe__form">
+        <form>
+          <input type="email" placeholder="Your email here" />
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>Pathway<span>.</span></h3>
+        <p>
+          Explore your suitable and dream places around the world. Here you
+          can find your right destination.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <p>FAQs</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+        <p>Contact Us</p>
+      </div>
+      <div class="footer__col">
+        <h4>Address</h4>
+        <p>
+          <span>Address:</span> Ayyappa Society, Madhapur, Telangana, 500018,
+          India
+        </p>
+        <p><span>Email:</span> info@pathway.com</p>
+        <p><span>Phone:</span> +91 9876543210</p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 Keermani. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    // Scroll animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      function checkScroll() {
+        animateElements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+          
+          if (elementPosition < screenPosition) {
+            element.classList.add('animate');
+          }
+        });
+      }
+      
+      // Initial check
+      checkScroll();
+      
+      // Check on scroll
+      window.addEventListener('scroll', checkScroll);
+    });
+
+    function validateSubscription(event) {
+        event.preventDefault();
+        const emailInput = document.getElementById("subscribeEmail").value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailInput) {
+            alert("Please enter your email.");
+            return;
+        }
+
+        if (!emailRegex.test(emailInput)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        alert("Thank you for subscribing!");
+        document.getElementById("subscribeEmail").value = "";
+    }
+    
+   
+  // Mobile menu functionality
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav__links');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  // Close menu on window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.style.display = 'flex';
+    } else {
+      navLinks.style.display = 'none';
+    }
+  });
+
+  </script>
+</body>
+</html>
+

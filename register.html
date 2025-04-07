@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <title>Pathway | Register</title>
+</head>
+<body class="page-transition">
+  <nav>
+    <div class="nav__logo">Pathway<span>.</span></div>
+    <ul class="nav__links">
+      <li class="link"><a href="index.html">Home</a></li>
+      <li class="link"><a href="destinations.html">Destinations</a></li>
+      <li class="link"><a href="tours.html">Tours</a></li>
+      <li class="link"><a href="services.html">Services</a></li>
+     
+    </ul>
+    <div class="nav__buttons">
+      <a href="login.html" class="log">Login</a>
+      <a href="register.html" class="log active">Register</a>
+    </div>
+  </nav>
+
+  <section class="auth__container">
+    <div class="auth__card">
+      <div class="auth__header">
+        <h2>Create an Account</h2>
+        <p>Join us and start your journey</p>
+      </div>
+      
+      <form class="auth__form" id="registerForm" novalidate>
+        <div class="form__group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="Enter your full name" required />
+          <div class="error-message" id="fullnameError"></div>
+        </div>
+        
+        <div class="form__group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+          <div class="error-message" id="emailError"></div>
+        </div>
+        
+        <div class="form__group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create a password" required />
+          <div class="error-message" id="passwordError"></div>
+        </div>
+        
+        <div class="form__group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="Confirm your password" required />
+          <div class="error-message" id="confirmPasswordError"></div>
+        </div>
+        
+        <div class="form__options">
+          <div class="terms">
+            <input type="checkbox" id="terms" required />
+            <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
+            <div class="error-message" id="termsError"></div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn auth-btn">Register</button>
+        
+        <div class="auth__divider">
+          <span>or</span>
+        </div>
+        
+        <div class="social__login">
+          <button type="button" class="social-btn google"  onclick="window.location.href='https://myaccount.google.com/';">
+            <i class="ri-google-fill"></i> Continue with Google
+          </button>
+          <button type="button" class="social-btn facebook" onclick="window.location.href='https://www.facebook.com/';">
+            <i class="ri-facebook-fill"></i> Continue with Facebook
+          </button>
+        </div>
+        
+        <p class="auth__redirect">
+          Already have an account? <a href="login.html">Login</a>
+        </p>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>Pathway<span>.</span></h3>
+        <p>
+          Explore your suitable and dream places around the world. Here you
+          can find your right destination.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <p>FAQs</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+        <p>Contact Us</p>
+      </div>
+      <div class="footer__col">
+        <h4>Address</h4>
+        <p>
+          <span>Address:</span> Ayyappa Society, Madhapur, Telangana, 500018,
+          India
+        </p>
+        <p><span>Email:</span> info@pathway.com</p>
+        <p><span>Phone:</span> +91 9876543210</p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 Keermani. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      function checkScroll() {
+        animateElements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+          
+          if (elementPosition < screenPosition) {
+            element.classList.add('animate');
+          }
+        });
+      }
+      
+      
+      checkScroll();
+      
+      
+      window.addEventListener('scroll', checkScroll);
+
+      
+      const registerForm = document.getElementById('registerForm');
+      const fullnameInput = document.getElementById('fullname');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const confirmPasswordInput = document.getElementById('confirm-password');
+      const termsCheckbox = document.getElementById('terms');
+      
+      const fullnameError = document.getElementById('fullnameError');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+      const confirmPasswordError = document.getElementById('confirmPasswordError');
+      const termsError = document.getElementById('termsError');
+
+      
+      function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      
+      function validatePasswordStrength(password) {
+        const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
+        return strongRegex.test(password);
+      }
+
+      
+      fullnameInput.addEventListener('input', function() {
+        if (fullnameInput.value.trim() === '') {
+          fullnameError.textContent = 'Full name is required';
+          fullnameInput.classList.add('input-error');
+        } else if (fullnameInput.value.trim().length < 3) {
+          fullnameError.textContent = 'Full name must be at least 3 characters';
+          fullnameInput.classList.add('input-error');
+        } else {
+          fullnameError.textContent = '';
+          fullnameInput.classList.remove('input-error');
+        }
+      });
+
+      emailInput.addEventListener('input', function() {
+        if (emailInput.value.trim() === '') {
+          emailError.textContent = 'Email is required';
+          emailInput.classList.add('input-error');
+        } else if (!validateEmail(emailInput.value)) {
+          emailError.textContent = 'Please enter a valid email address';
+          emailInput.classList.add('input-error');
+        } else {
+          emailError.textContent = '';
+          emailInput.classList.remove('input-error');
+        }
+      });
+
+      passwordInput.addEventListener('input', function() {
+        if (passwordInput.value.trim() === '') {
+          passwordError.textContent = 'Password is required';
+          passwordInput.classList.add('input-error');
+        } else if (passwordInput.value.length < 8) {
+          passwordError.textContent = 'Password must be at least 8 characters';
+          passwordInput.classList.add('input-error');
+        } else if (!validatePasswordStrength(passwordInput.value)) {
+          passwordError.textContent = 'Password must contain at least one uppercase letter, one lowercase letter, and one number';
+          passwordInput.classList.add('input-error');
+        } else {
+          passwordError.textContent = '';
+          passwordInput.classList.remove('input-error');
+        }
+
+        if (confirmPasswordInput.value.trim() !== '') {
+          if (passwordInput.value !== confirmPasswordInput.value) {
+            confirmPasswordError.textContent = 'Passwords do not match';
+            confirmPasswordInput.classList.add('input-error');
+          } else {
+            confirmPasswordError.textContent = '';
+            confirmPasswordInput.classList.remove('input-error');
+          }
+        }
+      });
+
+      confirmPasswordInput.addEventListener('input', function() {
+        if (confirmPasswordInput.value.trim() === '') {
+          confirmPasswordError.textContent = 'Please confirm your password';
+          confirmPasswordInput.classList.add('input-error');
+        } else if (passwordInput.value !== confirmPasswordInput.value) {
+          confirmPasswordError.textContent = 'Passwords do not match';
+          confirmPasswordInput.classList.add('input-error');
+        } else {
+          confirmPasswordError.textContent = '';
+          confirmPasswordInput.classList.remove('input-error');
+        }
+      });
+
+      termsCheckbox.addEventListener('change', function() {
+        if (!termsCheckbox.checked) {
+          termsError.textContent = 'You must agree to the Terms & Conditions';
+        } else {
+          termsError.textContent = '';
+        }
+      });
+
+      
+      registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        
+        if (fullnameInput.value.trim() === '') {
+          fullnameError.textContent = 'Full name is required';
+          fullnameInput.classList.add('input-error');
+          isValid = false;
+        } else if (fullnameInput.value.trim().length < 3) {
+          fullnameError.textContent = 'Full name must be at least 3 characters';
+          fullnameInput.classList.add('input-error');
+          isValid = false;
+        } else {
+          fullnameError.textContent = '';
+          fullnameInput.classList.remove('input-error');
+        }
+
+        
+        if (emailInput.value.trim() === '') {
+          emailError.textContent = 'Email is required';
+          emailInput.classList.add('input-error');
+          isValid = false;
+        } else if (!validateEmail(emailInput.value)) {
+          emailError.textContent = 'Please enter a valid email address';
+          emailInput.classList.add('input-error');
+          isValid = false;
+        } else {
+          emailError.textContent = '';
+          emailInput.classList.remove('input-error');
+        }
+
+        
+        if (passwordInput.value.trim() === '') {
+          passwordError.textContent = 'Password is required';
+          passwordInput.classList.add('input-error');
+          isValid = false;
+        } else if (passwordInput.value.length < 8) {
+          passwordError.textContent = 'Password must be at least 8 characters';
+          passwordInput.classList.add('input-error');
+          isValid = false;
+        } else if (!validatePasswordStrength(passwordInput.value)) {
+          passwordError.textContent = 'Password must contain at least one uppercase letter, one lowercase letter, and one number';
+          passwordInput.classList.add('input-error');
+          isValid = false;
+        } else {
+          passwordError.textContent = '';
+          passwordInput.classList.remove('input-error');
+        }
+
+        
+        if (confirmPasswordInput.value.trim() === '') {
+          confirmPasswordError.textContent = 'Please confirm your password';
+          confirmPasswordInput.classList.add('input-error');
+          isValid = false;
+        } else if (passwordInput.value !== confirmPasswordInput.value) {
+          confirmPasswordError.textContent = 'Passwords do not match';
+          confirmPasswordInput.classList.add('input-error');
+          isValid = false;
+        } else {
+          confirmPasswordError.textContent = '';
+          confirmPasswordInput.classList.remove('input-error');
+        }
+
+        
+        if (!termsCheckbox.checked) {
+          termsError.textContent = 'You must agree to the Terms & Conditions';
+          isValid = false;
+        } else {
+          termsError.textContent = '';
+        }
+
+       
+        if (isValid) {
+          
+          const submitBtn = document.querySelector('.auth-btn');
+          const originalText = submitBtn.textContent;
+          submitBtn.innerHTML = '<div class="spinner"></div>';
+          submitBtn.disabled = true;
+
+          
+          setTimeout(() => {
+            
+            window.location.href = 'login.html';
+          }, 2000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
